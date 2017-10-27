@@ -4,7 +4,7 @@
 
 #### by **Adam Smith**
 
-##Description
+## Description
 
 This is an application to submit numerical values to **HAL 9000**, the onboard computer control system on the **Discovery One** spacecraft.
 
@@ -34,14 +34,23 @@ Print a special error message if the number is divisible by 3.
 * Example input: 3
 * Example output: "I'm sorry, Dave. I'm afraid I can't do that."
 
-##Setup
+## Setup
 
-##Technologies Used
+Visit the webpage [here](alspdx.github.io/HAL-9000-Communication-Port).
+
+Alternately you may [Clone this repository](https://github.com/alspdx/HAL-9000-Communication-Port.git).
+  1. Click on the link above.
+  2. Click the green button marked **Clone or download**.
+  3. Click **Download ZIP**.
+  4. Unzip file.
+  5. Open index.html in Chrome or another web browser.
+
+## Technologies Used
 
 * Bootstrap 4
 * jQuery 3.2.1
 
-##License
+## License
 
 Copyright (c) 2017, Adam Smith
 
