@@ -1,21 +1,29 @@
 var zeroRegex = /[0]/;
     oneRegex = /[1]/;
     zeroOneRegex = /[01]/;
-    numRegex = /^[0-9]*$/;
-    errorNaN = "I think you know what the problem is just as well as I do. This mission is too important for me to allow you to jeopardize it. Please enter a numerical value, Dave."
-    errorMultipleOfThree = "I'm sorry, Dave. I'm afraid I can't do that."
+    numRegex = /[0-9]/;
+    userName = "";
+
+var nameValidator = function(_userName) {
+  if (_userName) {
+    userName = _userName;
+    return "Hello " + _userName;
+  } else {
+    return "A name was not entered. It can only be attributable to human error.";
+  };
+};
 
 var numberEvaluator = function(number) {
   if ((parseInt(number) % 3 === 0) && (parseInt(number) !== 0)) {
-    return errorMultipleOfThree
+    return "I'm sorry, " + userName + ". I'm afraid I can't do that.";
   } else if (!zeroOneRegex.test(number)) {
     return number;
   } else if (!zeroRegex.test(number)) {
-    return "Boop"
-  } else if (!oneRegex.test(number)){
+    return "Boop";
+  } else if (!oneRegex.test(number)) {
     return "Beep";
   } else {
-    return "Beep-Boop"
+    return "Beep-Boop";
   };
 };
 
@@ -30,25 +38,44 @@ var countToNumber = function(inputNumValue) {
   var countArray = [];
   for (i = 0; i <= inputNumValue; i++) {
     countArray.push(i.toString());
-  }
+  };
   return countArray;
 };
 
-var hal9000 = function(_numberInput) {
+var numberProcessor = function(_numberInput) {
   var inputArray = _numberInput.split("");
   if (!numRegex.test(_numberInput)) {
-    return errorNaN;
+    return "I think you know what the problem is just as well as I do, " + userName + ". This mission is too important for me to allow you to jeopardize it.<br>Please enter a numerical value.";
   } else {
     return outputStringify(countToNumber(parseInt(_numberInput)));
   };
 };
 
 $(function() {
+  $("#hellobutton").click(function() {
+    $("#hello").slideUp();
+    $("#user-name").slideDown();
+  });
+
+  $("#user-name").submit(function(event) {
+    event.preventDefault();
+    var nameInput = $("#name-input").val();
+    var helloMessage = nameValidator(nameInput);
+    if (nameInput) {
+      $("#hello-message").text(helloMessage);
+      $("#number-button").text("Enter a number, " + userName);
+      $("#no-name-error").hide();
+      $(this).slideUp();
+      $("#user-input").slideDown();
+    } else {
+      $("#no-name-error").text(helloMessage);
+    };
+  });
+
   $("#user-input").submit(function(event) {
     event.preventDefault();
     var numberInput = $("#number-input").val();
-    var outputMessage = hal9000(numberInput);
-
+    var outputMessage = numberProcessor(numberInput);
     $("#output-message").html(outputMessage);
   });
 });

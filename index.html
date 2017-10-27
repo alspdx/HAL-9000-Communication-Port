@@ -13,25 +13,33 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="jumbotron bgtransparent">
-            <h1 class="display-1 header">Hello Dave</h1>
+          <div class="col-md-12 text-center">
+            <div class="jumbotron bgtransparent text-center">
+              <h1 class="display-2 header" id="hello-message"></h1>
+              <p class="lead" id="no-name-error"></p>
+            </div>
           </div>
-          <div class="col-md-6">
-            <!-- blank space -->
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-12 text-center">
+            <form id="hello">
+              <div class="form-group">
+                <input type="text" id="transparentform" disabled>
+              </div>
+              <button type="button" id="hellobutton">Hello.</button>
+            </form>
+            <form id="user-name">
+              <div class="form-group">
+                <input type="text" id="name-input">
+              </div>
+              <button type="submit">What is your name, human?</button>
+            </form>
             <form id="user-input">
               <div class="form-group">
-                <label for="number-input"></label>
                 <input type="text" id="number-input">
               </div>
-              <button type="submit">Enter the number, Dave</button>
+              <button type="submit" id="number-button"></button>
             </form>
           </div>
-          <div class="col-md-6">
-            <!-- blank space -->
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-12 text-center">
             <span id="output-message">
 
             </span>
