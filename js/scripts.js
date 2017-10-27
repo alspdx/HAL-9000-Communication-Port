@@ -2,16 +2,9 @@ var zeroRegex = /[0]/;
     oneRegex = /[1]/;
     zeroOneRegex = /[01]/;
     numRegex = /[0-9]/;
+    alphaRegex = /[a-zA-Z]/;
     userName = "";
 
-var nameValidator = function(_userName) {
-  if (_userName) {
-    userName = _userName;
-    return "Hello " + _userName;
-  } else {
-    return "A name was not entered. It can only be attributable to human error.";
-  };
-};
 
 var numberEvaluator = function(number) {
   if ((parseInt(number) % 3 === 0) && (parseInt(number) !== 0)) {
@@ -59,16 +52,17 @@ $(function() {
 
   $("#user-name").submit(function(event) {
     event.preventDefault();
-    var nameInput = $("#name-input").val();
-    var helloMessage = nameValidator(nameInput);
-    if (nameInput) {
-      $("#hello-message").text(helloMessage);
+    userName = $("#name-input").val();
+    if (alphaRegex.test(userName)) {
+      $("#hal").hide();
+      $("#name-output").text("Hello, " + userName);
       $("#number-button").text("Enter a number, " + userName);
-      $("#no-name-error").hide();
+      $("#name-message").text("That's an odd name.");
       $(this).slideUp();
       $("#user-input").slideDown();
     } else {
-      $("#no-name-error").text(helloMessage);
+      $("#name-output").text("ERROR")
+      $("#name-message").text("A name was not entered.");
     };
   });
 
