@@ -36,7 +36,7 @@ Print a special error message if the number is divisible by 3.
 
 ## Setup
 
-Visit the webpage [here](alspdx.github.io/HAL-9000-Communication-Port).
+[Visit the webpage here](https://alspdx.github.io/HAL-9000-Communication-Port/).
 
 Alternately you may [Clone this repository](https://github.com/alspdx/HAL-9000-Communication-Port.git).
   1. Click on the link above.
