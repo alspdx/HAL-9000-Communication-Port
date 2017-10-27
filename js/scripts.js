@@ -23,7 +23,7 @@ var outputStringify = function(numArray) {
   var outputString = numArray.map(function(number) {
     return numberEvaluator(number);
   });
-  return outputString.join(", ");
+  return outputString.join("<br>");
 };
 
 var countToNumber = function(inputNumValue) {
@@ -48,6 +48,7 @@ $(function() {
     event.preventDefault();
     var numberInput = $("#number-input").val();
     var outputMessage = hal9000(numberInput);
-    $("#output-message").text(outputMessage);
+
+    $("#output-message").html(outputMessage);
   });
 });
