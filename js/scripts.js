@@ -9,8 +9,10 @@ var beepBoop = function(number) {
     return number;
   } else if (!zeroRegex.test(number)) {
     return "Boop"
-  } else {
+  } else if (!zeroRegex.test(number)){
     return "Beep";
+  } else {
+    return "Beep-Boop"
   };
 };
 
