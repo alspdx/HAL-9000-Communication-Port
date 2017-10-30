@@ -53,8 +53,8 @@ $(function() {
   $("#user-name").submit(function(event) {
     event.preventDefault();
     userName = $("#name-input").val();
+    $("#hal").hide();
     if (alphaRegex.test(userName)) {
-      $("#hal").hide();
       $("#name-output").text("Hello, " + userName);
       $("#number-button").text("Enter a number, " + userName);
       $("#name-message").text("That's an odd name.");
