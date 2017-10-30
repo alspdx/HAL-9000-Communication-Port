@@ -14,25 +14,25 @@ Return an error message if the value is not a number.
  * Example input: Hello HAL
  * Example output: "I think you know what the problem is just as well as I do. This mission is too important for me to allow you to jeopardize it. Please enter a numerical value, Dave."
 
-Count up to the provided number.
-* Example input: 3
-* Example output: [1, 2, 3]
-
 Print a special message if the number contains a 0.
 * Example input: 0
-* Example output: "Beep"
+* Example output: ["Beep"]
 
 Print a special message if the number contains a 1.
 * Example input: 1
-* Example output: "Boop"
+* Example output: ["Beep", "Boop"]
 
-Print an extra-special message if the number contains both a 0 and a 1.
-* Example input: 01
-* Example output: "Beep-Boop"
+Print the number if it is not a 0 or a 1.
+* Example input: 2
+* Example output: ["Beep", "Boop", 2]
 
 Print a special error message if the number is divisible by 3.
 * Example input: 3
-* Example output: "I'm sorry, Dave. I'm afraid I can't do that."
+* Example output: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that."]
+
+Print an extra-special message if the number contains both a 0 and a 1.
+* Example input: 10
+* Example ouput: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5,  "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.", "Beep-Boop"]
 
 ## Setup
 
