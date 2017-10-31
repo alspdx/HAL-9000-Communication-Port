@@ -10,29 +10,33 @@ This is an application to submit numerical values to **HAL 9000**, the onboard c
 
 The application will:
 
+Take in the user's name and display it in a welcome message.
+  * Example input: Dave
+  * Expected output: "Hello Dave. That's and odd name."
+
 Return an error message if the value is not a number.
- * Example input: Hello HAL
- * Example output: "I think you know what the problem is just as well as I do. This mission is too important for me to allow you to jeopardize it. Please enter a numerical value, Dave."
+  * Example input: Hello HAL
+  * Expected output: "I think you know what the problem is just as well as I do, Dave. This mission is too important for me to allow you to jeopardize it. Please enter a numerical value."
 
 Print a special message if the number contains a 0.
-* Example input: 0
-* Example output: ["Beep"]
+  * Example input: 0
+  * Expected output: ["Beep"]
 
 Print a special message if the number contains a 1.
-* Example input: 1
-* Example output: ["Beep", "Boop"]
+  * Example input: 1
+  * Expected output: ["Beep", "Boop"]
 
 Print the number if it is not a 0 or a 1.
-* Example input: 2
-* Example output: ["Beep", "Boop", 2]
+  * Example input: 2
+  * Expected output: ["Beep", "Boop", 2]
 
 Print a special error message if the number is divisible by 3.
-* Example input: 3
-* Example output: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that."]
+  * Example input: 3
+  * Expected output: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that."]
 
 Print an extra-special message if the number contains both a 0 and a 1.
-* Example input: 10
-* Example ouput: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5,  "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.", "Beep-Boop"]
+  * Example input: 10
+  * Expected ouput: ["Beep", "Boop", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5,  "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.", "Beep-Boop"]
 
 ## Setup
 
